@@ -59,8 +59,9 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-10 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Guntur Mirchi Kaaram. All rights reserved.</p>
-          <p className="mt-2">Farm to Home 💚 | Authentic Home-made 🌶️ | Real Guntur Spice 🔥</p>
+          <p>&copy; {new Date().getFullYear()} SR Foods. All rights reserved.</p>
+          <p className="mt-2 text-brand-yellow font-medium">SR Foods: Farms to Home 🌾</p>
+          <p className="mt-1">Authentic Home-made 🌶️ | Real Guntur Spice 🔥</p>
         </div>
       </div>
     </footer>

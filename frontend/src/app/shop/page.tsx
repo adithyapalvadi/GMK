@@ -43,12 +43,12 @@ export default function Shop() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Search */}
         <div className="mb-10">
-          <h1 className="text-4xl font-serif font-bold text-brand-dark mb-6">Our Shop</h1>
+          <h1 className="text-4xl font-serif font-bold text-brand-dark mb-6">Our Products</h1>
           
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
             <div className="relative w-full md:w-1/2">

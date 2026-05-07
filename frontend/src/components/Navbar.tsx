@@ -26,20 +26,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isHomePage = pathname === '/';
+  const isSolidBackground = isScrolled || !isHomePage;
+
   if (pathname?.startsWith('/admin')) {
     return null;
   }
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 py-3' : 'bg-transparent py-5'
+      isSolidBackground ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 py-3' : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
           <div className="flex items-center">
             <button 
-              className="md:hidden mr-4 text-brand-dark"
+              className={`md:hidden mr-4 ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}
               onClick={() => setMobileMenuOpen(true)}
             >
               <Menu size={28} />
@@ -53,26 +56,26 @@ export default function Navbar() {
                   className="object-cover"
                 />
               </div>
-              <span className={`hidden sm:block font-serif font-bold text-2xl tracking-tight transition-colors ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>
+              <span className={`hidden sm:block font-serif font-bold text-2xl tracking-tight transition-colors ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
                 Guntur Mirchi Kaaram
               </span>
             </Link>
           </div>
 
           <div className="hidden md:flex space-x-10">
-            <Link href="/" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>Home</Link>
-            <Link href="/shop" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>Shop All</Link>
-            <Link href="/#about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>Our Story</Link>
+            <Link href="/" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Home</Link>
+            <Link href="/shop" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Shop All</Link>
+            <Link href="/#about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Our Story</Link>
           </div>
 
           <div className="flex items-center space-x-6">
-            <button className={`hover:text-brand-red transition-colors ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>
+            <button className={`hover:text-brand-red transition-colors ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               <Search size={22} />
             </button>
-            <Link href="/dashboard" className={`hover:text-brand-red transition-colors hidden sm:block ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>
+            <Link href="/dashboard" className={`hover:text-brand-red transition-colors hidden sm:block ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               <User size={22} />
             </Link>
-            <Link href="/cart" className={`relative hover:text-brand-red transition-colors ${isScrolled ? 'text-brand-dark' : 'text-white md:text-brand-dark'}`}>
+            <Link href="/cart" className={`relative hover:text-brand-red transition-colors ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               <ShoppingCart size={22} />
               {mounted && getCartCount() > 0 && (
                 <motion.span 

@@ -70,7 +70,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="inline-block py-1 px-3 rounded-full bg-brand-red/90 text-white text-xs font-bold tracking-wider uppercase mb-6"
             >
-              Direct from Farms 🌾
+              SR Foods • Farms to Home 🌾
             </motion.span>
             
             <motion.h1 
