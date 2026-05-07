@@ -3,14 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Leaf, ShieldCheck, Truck, Star } from 'lucide-react';
+import { Leaf, ShieldCheck, Truck, Star, Phone } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const featuredProducts = [
     {
       id: '1',
-      name: 'Guntur Mirchi Karam',
+      name: t('products_data.mirchi_karam.name'),
       price: 250,
       image: '/images/mirchi-karam.png',
       spiceLevel: 5 as const,
@@ -20,7 +22,7 @@ export default function Home() {
     },
     {
       id: '2',
-      name: 'Pandumirapakaya Pachadi',
+      name: t('products_data.pandumirapakaya.name'),
       price: 350,
       image: '/images/mango-pickle.png',
       spiceLevel: 4 as const,
@@ -30,7 +32,7 @@ export default function Home() {
     },
     {
       id: '3',
-      name: 'Garlic Karam Podi',
+      name: t('products_data.garlic_karam.name'),
       price: 200,
       image: '/images/hero-bg.png', // reusing hero image as a placeholder for garlic karam
       spiceLevel: 3 as const,
@@ -44,7 +46,7 @@ export default function Home() {
     <div className="min-h-screen">
       
       {/* Premium Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -57,7 +59,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-start text-white">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-start text-white pt-32 pb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,27 +70,27 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="inline-block py-1 px-3 rounded-full bg-brand-red/90 text-white text-xs font-bold tracking-wider uppercase mb-6"
+              className="inline-block py-1.5 px-4 rounded-full bg-brand-red/90 text-white text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6"
             >
-              SR Foods • Farms to Home 🌾
+              {t('hero.tagline')} 🌾
             </motion.span>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6"
+              className="text-4xl md:text-6xl font-serif font-bold leading-tight mb-6"
             >
-              Authentic <span className="text-brand-orange">Guntur</span><br />Spice & Pickles
+              {t('hero.title')}
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed max-w-xl"
+              className="text-base md:text-lg text-gray-200 mb-10 leading-relaxed max-w-xl"
             >
-              Experience the true fire of Andhra. Handcrafted by artisans using generation-old recipes, bringing the world's finest chilies straight to your kitchen.
+              {t('hero.subtitle')}
             </motion.p>
             
             <motion.div 
@@ -97,19 +99,25 @@ export default function Home() {
               transition={{ delay: 0.9, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/shop" className="px-8 py-4 bg-brand-red hover:bg-brand-dark-red text-white font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg shadow-brand-red/30 flex items-center justify-center">
-                Explore the Shop
+              <Link href="/shop" className="px-8 py-4 bg-brand-red hover:bg-brand-dark-red text-white font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg shadow-brand-red/30 flex items-center justify-center text-sm md:text-base">
+                {t('hero.cta_shop')}
               </Link>
-              <Link href="#about" className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold rounded-full transition-all flex items-center justify-center">
-                Our Story
-              </Link>
+              <a 
+                href="https://wa.me/917093840055" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold rounded-full transition-all flex items-center justify-center text-sm md:text-base"
+              >
+                <Phone size={18} className="mr-2" />
+                {t('hero.cta_whatsapp')}
+              </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Feature Highlights - Glassmorphism overlap */}
-      <section className="relative z-20 -mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -120,8 +128,8 @@ export default function Home() {
             <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-brand-orange mb-6 shadow-inner">
               <Leaf size={32} />
             </div>
-            <h3 className="text-xl font-bold text-brand-dark mb-3">Farm to Home</h3>
-            <p className="text-gray-600">Sourced directly from our own chilli farms in Guntur, ensuring 100% natural and pesticide-free quality.</p>
+            <h3 className="text-xl font-bold text-brand-dark mb-3">{t('features.farm_to_home.title')}</h3>
+            <p className="text-gray-600">{t('features.farm_to_home.desc')}</p>
           </motion.div>
           
           <motion.div 
@@ -134,8 +142,8 @@ export default function Home() {
             <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-brand-orange mb-6 shadow-inner">
               <ShieldCheck size={32} />
             </div>
-            <h3 className="text-xl font-bold text-brand-dark mb-3">Authentic Recipes</h3>
-            <p className="text-gray-600">Hand-pounded spices and sun-dried pickles crafted using traditional Andhra household methods.</p>
+            <h3 className="text-xl font-bold text-brand-dark mb-3">{t('features.authentic_recipes.title')}</h3>
+            <p className="text-gray-600">{t('features.authentic_recipes.desc')}</p>
           </motion.div>
           
           <motion.div 
@@ -148,8 +156,8 @@ export default function Home() {
             <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-brand-orange mb-6 shadow-inner">
               <Truck size={32} />
             </div>
-            <h3 className="text-xl font-bold text-brand-dark mb-3">Freshly Packed</h3>
-            <p className="text-gray-600">We make our pickles and powders in small batches to guarantee maximum freshness upon delivery.</p>
+            <h3 className="text-xl font-bold text-brand-dark mb-3">{t('features.freshly_packed.title')}</h3>
+            <p className="text-gray-600">{t('features.freshly_packed.desc')}</p>
           </motion.div>
         </div>
       </section>
@@ -178,8 +186,8 @@ export default function Home() {
                     <Star size={32} fill="currentColor" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-2xl text-brand-dark">50+ Years</h4>
-                    <p className="text-gray-500 font-medium">Of Farming Heritage</p>
+                    <h4 className="font-bold text-2xl text-brand-dark">{t('about.years')}</h4>
+                    <p className="text-gray-500 font-medium">{t('about.years_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -191,24 +199,18 @@ export default function Home() {
               viewport={{ once: true }}
               className="lg:w-1/2"
             >
-              <h2 className="text-brand-orange font-bold tracking-widest uppercase mb-4">Our Heritage</h2>
+              <h2 className="text-brand-orange font-bold tracking-widest uppercase mb-4">{t('about.heritage')}</h2>
               <h3 className="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-8 leading-tight">
-                From our soil to your soul.
+                {t('about.title')}
               </h3>
               <div className="space-y-6 text-lg text-gray-600">
-                <p>
-                  Guntur Mirchi Kaaram was born out of a simple desire: to share the unadulterated, fiery magic of authentic Guntur chilies with the world. 
-                </p>
-                <p>
-                  For generations, our family has cultivated the world's most sought-after chilies. We realized that the store-bought powders lack the vibrant color, the sharp aroma, and the intense heat of real, fresh farm produce.
-                </p>
-                <p>
-                  That's why we bypassed the middlemen. Every jar of spice and pickle you receive is made in small batches by local artisans using our grandmother's recipes. No preservatives, no artificial colors—just pure, fiery love.
-                </p>
+                <p>{t('about.p1')}</p>
+                <p>{t('about.p2')}</p>
+                <p>{t('about.p3')}</p>
               </div>
               <div className="mt-10">
                 <Link href="/shop" className="inline-flex items-center font-bold text-brand-red hover:text-brand-dark-red text-lg group">
-                  Discover our products 
+                  {t('about.discover')} 
                   <span className="ml-2 transform group-hover:translate-x-2 transition-transform">→</span>
                 </Link>
               </div>
@@ -228,7 +230,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-4xl font-serif font-bold text-brand-dark mb-6"
             >
-              Signature Collection
+              {t('collection.title')}
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -237,7 +239,7 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="text-xl text-gray-500"
             >
-              Hand-picked bestsellers loved by thousands of spicy food enthusiasts across the country.
+              {t('collection.subtitle')}
             </motion.p>
           </div>
 
@@ -257,7 +259,7 @@ export default function Home() {
 
           <div className="mt-16 text-center">
             <Link href="/shop" className="inline-block px-10 py-4 bg-brand-dark hover:bg-black text-white font-bold rounded-full transition-all hover:-translate-y-1 shadow-lg">
-              View Entire Collection
+              {t('collection.view_all')}
             </Link>
           </div>
         </div>

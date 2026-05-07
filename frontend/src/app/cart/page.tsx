@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 import { Trash2, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CartPage() {
+  const { t } = useLanguage();
   const { items, updateQuantity, removeItem, getCartTotal } = useCartStore();
   const [mounted, setMounted] = useState(false);
 
@@ -21,10 +23,10 @@ export default function CartPage() {
     return (
       <div className="min-h-[70vh] bg-gray-50 flex flex-col items-center justify-center px-4">
         <div className="text-6xl mb-6">🛒</div>
-        <h2 className="text-3xl font-serif font-bold text-brand-dark mb-4">Your cart is empty</h2>
-        <p className="text-gray-500 mb-8 text-center max-w-md">Looks like you haven't added any spices or pickles to your cart yet.</p>
+        <h2 className="text-3xl font-serif font-bold text-brand-dark mb-4">{t('cart.empty')}</h2>
+        <p className="text-gray-500 mb-8 text-center max-w-md">{t('cart.empty_subtitle')}</p>
         <Link href="/shop" className="bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-dark-red transition-colors flex items-center">
-          Start Shopping <ArrowRight className="ml-2" size={20} />
+          {t('cart.continue_shopping')} <ArrowRight className="ml-2" size={20} />
         </Link>
       </div>
     );
@@ -33,7 +35,7 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gray-50 pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-serif font-bold text-brand-dark mb-8">Shopping Cart</h1>
+        <h1 className="text-4xl font-serif font-bold text-brand-dark mb-8">{t('cart.title')}</h1>
         
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Cart Items */}
@@ -105,7 +107,7 @@ export default function CartPage() {
             
             <div className="mt-6">
               <Link href="/shop" className="text-brand-red font-bold flex items-center hover:text-brand-dark-red transition-colors">
-                <ArrowLeft size={20} className="mr-2" /> Continue Shopping
+                <ArrowLeft size={20} className="mr-2" /> {t('cart.continue_shopping')}
               </Link>
             </div>
           </div>
@@ -117,7 +119,7 @@ export default function CartPage() {
               
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-gray-600">
-                  <span>Subtotal</span>
+                  <span>{t('cart.subtotal')}</span>
                   <span className="font-medium">₹{total}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
@@ -125,13 +127,13 @@ export default function CartPage() {
                   <span className="font-medium">Calculated at checkout</span>
                 </div>
                 <div className="border-t border-gray-100 pt-4 flex justify-between items-center text-xl font-bold text-brand-dark">
-                  <span>Total Estimate</span>
+                  <span>{t('cart.total')}</span>
                   <span className="text-brand-red">₹{total}</span>
                 </div>
               </div>
               
               <Link href="/checkout" className="w-full bg-brand-red hover:bg-brand-dark-red text-white py-4 rounded-lg font-bold text-lg flex items-center justify-center transition-colors shadow-md">
-                Proceed to Checkout
+                {t('cart.checkout')}
               </Link>
               
               <div className="mt-4 text-center text-xs text-gray-500 flex flex-col items-center">

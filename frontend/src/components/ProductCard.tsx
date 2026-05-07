@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Star, ShoppingCart, Flame } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
+import { useLanguage } from '@/context/LanguageContext';
 
 export interface Product {
   id: string;
@@ -20,6 +21,7 @@ export interface Product {
 
 export default function ProductCard({ product }: { product: Product }) {
   const addItem = useCartStore((state) => state.addItem);
+  const { t } = useLanguage();
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent navigating to product detail
@@ -58,7 +60,7 @@ export default function ProductCard({ product }: { product: Product }) {
             <Star size={16} className="mr-1" fill="currentColor" /> 
             {product.rating} <span className="text-gray-400 ml-1">({product.reviews || Math.floor(Math.random() * 100) + 20})</span>
           </div>
-          <div className="flex items-center text-red-500 font-medium" title={`Spice Level: ${product.spiceLevel}/5`}>
+          <div className="flex items-center text-red-500 font-medium" title={`${t('shop.spice_level')}: ${product.spiceLevel}/5`}>
             <Flame size={16} className="mr-1" fill={product.spiceLevel > 3 ? "currentColor" : "none"} />
             {product.spiceLevel}/5
           </div>

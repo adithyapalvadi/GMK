@@ -7,10 +7,12 @@ import { useCartStore } from '@/store/useCartStore';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const pathname = usePathname();
   const getCartCount = useCartStore((state) => state.getCartCount);
+  const { locale, setLocale, t } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -63,13 +65,33 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex space-x-10">
-            <Link href="/" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Home</Link>
-            <Link href="/shop" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Shop All</Link>
-            <Link href="/#about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>Our Story</Link>
+            <Link href="/" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+              {t('nav.home')}
+            </Link>
+            <Link href="/shop" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+              {t('nav.shop')}
+            </Link>
+            <Link href="/#about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+              {t('nav.about')}
+            </Link>
           </div>
 
-          <div className="flex items-center space-x-6">
-            <button className={`hover:text-brand-red transition-colors ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+          <div className="flex items-center space-x-4 sm:space-x-6">
+            {/* Language Toggle */}
+            <button 
+              onClick={() => setLocale(locale === 'en' ? 'te' : 'en')}
+              className={`flex items-center gap-1 px-3 py-1 rounded-full border transition-all text-xs font-bold ${
+                isSolidBackground 
+                ? 'border-gray-200 text-brand-dark hover:border-brand-red' 
+                : 'border-white/30 text-white hover:border-white'
+              }`}
+            >
+              <span className={locale === 'en' ? 'text-brand-red font-black' : ''}>EN</span>
+              <span className="opacity-30">|</span>
+              <span className={locale === 'te' ? 'text-brand-red font-black' : ''}>తె</span>
+            </button>
+
+            <button className={`hover:text-brand-red transition-colors hidden sm:block ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               <Search size={22} />
             </button>
             <Link href="/dashboard" className={`hover:text-brand-red transition-colors hidden sm:block ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
@@ -120,10 +142,28 @@ export default function Navbar() {
               </button>
             </div>
             <div className="flex flex-col p-6 space-y-6 text-xl font-bold text-brand-dark">
-              <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-              <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>Shop All Products</Link>
-              <Link href="/#about" onClick={() => setMobileMenuOpen(false)}>Our Story</Link>
+              <Link href="/" onClick={() => setMobileMenuOpen(false)}>{t('nav.home')}</Link>
+              <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>{t('nav.shop')}</Link>
+              <Link href="/#about" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</Link>
               <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>My Account</Link>
+              
+              <div className="pt-6 border-t border-gray-100">
+                <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Select Language</p>
+                <div className="flex gap-4">
+                  <button 
+                    onClick={() => { setLocale('en'); setMobileMenuOpen(false); }}
+                    className={`px-6 py-2 rounded-lg border font-bold ${locale === 'en' ? 'border-brand-red bg-brand-red/5 text-brand-red' : 'border-gray-200 text-gray-500'}`}
+                  >
+                    English
+                  </button>
+                  <button 
+                    onClick={() => { setLocale('te'); setMobileMenuOpen(false); }}
+                    className={`px-6 py-2 rounded-lg border font-bold ${locale === 'te' ? 'border-brand-red bg-brand-red/5 text-brand-red' : 'border-gray-200 text-gray-500'}`}
+                  >
+                    తెలుగు
+                  </button>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

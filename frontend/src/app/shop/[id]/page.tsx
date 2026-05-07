@@ -5,8 +5,10 @@ import Image from 'next/image';
 import { Star, ShoppingCart, ArrowLeft, ShieldCheck, Truck } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
 import { useCartStore } from '@/store/useCartStore';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProductDetail() {
+  const { t } = useLanguage();
   const params = useParams();
   const router = useRouter();
   const id = params?.id as string;
@@ -34,10 +36,10 @@ export default function ProductDetail() {
   return (
     <div className="bg-white min-h-screen pb-20">
       {/* Breadcrumb */}
-      <div className="bg-brand-yellow/30 py-4">
+      <div className="bg-brand-yellow/30 py-4 pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/shop" className="text-gray-500 hover:text-brand-red flex items-center font-medium">
-            <ArrowLeft size={18} className="mr-2" /> Back to Shop
+            <ArrowLeft size={18} className="mr-2" /> {t('product.back')}
           </Link>
         </div>
       </div>
@@ -67,10 +69,10 @@ export default function ProductDetail() {
                   <Star key={i} size={20} className={i < Math.floor(product.rating) ? "fill-current" : "text-gray-300"} />
                 ))}
               </div>
-              <span className="text-gray-600 font-medium">({product.rating} Reviews)</span>
+              <span className="text-gray-600 font-medium">({product.rating} {t('product.rating')})</span>
               <span className="mx-4 text-gray-300">|</span>
               <span className="flex items-center text-sm font-bold text-brand-dark-red bg-brand-yellow px-3 py-1 rounded-full">
-                Spice Level: {[...Array(product.spiceLevel)].map((_, i) => <span key={i} className="ml-1">🌶️</span>)}
+                {t('shop.spice_level')}: {[...Array(product.spiceLevel)].map((_, i) => <span key={i} className="ml-1">🌶️</span>)}
               </span>
             </div>
 
@@ -83,7 +85,7 @@ export default function ProductDetail() {
             </p>
 
             <div className="bg-brand-yellow/20 p-6 rounded-xl mb-8">
-              <h3 className="font-bold text-brand-dark mb-2">Ingredients:</h3>
+              <h3 className="font-bold text-brand-dark mb-2">{t('product.ingredients')}:</h3>
               <p className="text-gray-700">{product.ingredients}</p>
             </div>
 
@@ -105,7 +107,7 @@ export default function ProductDetail() {
                 className="flex-1 bg-brand-red hover:bg-brand-dark-red text-white py-4 rounded-lg font-bold text-lg flex items-center justify-center transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <ShoppingCart size={22} className="mr-2" />
-                Add to Cart
+                {t('shop.add_to_cart')}
               </button>
             </div>
 
@@ -114,15 +116,15 @@ export default function ProductDetail() {
               <div className="flex items-center">
                 <ShieldCheck className="text-brand-orange mr-3" size={24} />
                 <div>
-                  <div className="font-bold text-brand-dark">100% Authentic</div>
-                  <div className="text-xs text-gray-500">From Guntur Farms</div>
+                  <div className="font-bold text-brand-dark">{t('product.authentic')}</div>
+                  <div className="text-xs text-gray-500">{t('product.from_farms')}</div>
                 </div>
               </div>
               <div className="flex items-center">
                 <Truck className="text-brand-orange mr-3" size={24} />
                 <div>
-                  <div className="font-bold text-brand-dark">Fast Delivery</div>
-                  <div className="text-xs text-gray-500">Across India</div>
+                  <div className="font-bold text-brand-dark">{t('product.fast_delivery')}</div>
+                  <div className="text-xs text-gray-500">{t('product.across_india')}</div>
                 </div>
               </div>
             </div>
