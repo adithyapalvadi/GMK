@@ -71,9 +71,12 @@ export default function Navbar() {
             <Link href="/shop" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               {t('nav.shop')}
             </Link>
-            <Link href="/#about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+            <Link href="/about" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
               {t('nav.about')}
             </Link>
+            <a href="https://wa.me/917093840055" target="_blank" rel="noopener noreferrer" className={`font-bold text-sm tracking-wider uppercase transition-colors hover:text-brand-red ${isSolidBackground ? 'text-brand-dark' : 'text-white'}`}>
+              {t('nav.contact')}
+            </a>
           </div>
 
           <div className="flex items-center space-x-4 sm:space-x-6">
@@ -144,7 +147,8 @@ export default function Navbar() {
             <div className="flex flex-col p-6 space-y-6 text-xl font-bold text-brand-dark">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>{t('nav.home')}</Link>
               <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>{t('nav.shop')}</Link>
-              <Link href="/#about" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</Link>
+              <Link href="/about" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</Link>
+              <a href="https://wa.me/917093840055" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>{t('nav.contact')}</a>
               <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>My Account</Link>
               
               <div className="pt-6 border-t border-gray-100">

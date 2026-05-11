@@ -46,7 +46,7 @@ export default function AdminLayout({
                 }`}
               >
                 <item.icon
-                  className={`flex-shrink-0 mr-3 h-5 w-5 ${
+                  className={`shrink-0 mr-3 h-5 w-5 ${
                     isActive ? 'text-brand-red' : 'text-gray-400 group-hover:text-gray-500'
                   }`}
                 />
@@ -58,11 +58,11 @@ export default function AdminLayout({
 
         <div className="p-4 border-t border-gray-200">
           <Link href="/" className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 transition-colors mb-1">
-            <Settings className="flex-shrink-0 mr-3 h-5 w-5 text-gray-400" />
+            <Settings className="shrink-0 mr-3 h-5 w-5 text-gray-400" />
             Storefront Settings
           </Link>
           <button className="w-full flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-red-50 hover:text-red-600 transition-colors">
-            <LogOut className="flex-shrink-0 mr-3 h-5 w-5 text-gray-400 group-hover:text-red-500" />
+            <LogOut className="shrink-0 mr-3 h-5 w-5 text-gray-400 group-hover:text-red-500" />
             Sign Out
           </button>
         </div>

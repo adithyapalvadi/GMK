@@ -94,6 +94,43 @@ export const translations = {
       mirchi_karam: { name: "Guntur Mirchi Karam" },
       pandumirapakaya: { name: "Pandumirapakaya Pachadi" },
       garlic_karam: { name: "Garlic Karam Podi" }
+    },
+    about_page: {
+      hero_title: "Our Story",
+      hero_subtitle: "The passion behind every pinch of spice.",
+      meet_founder_tag: "Meet the Founder",
+      founder_name: "Founder",
+      founder_role: "Founder & Visionary, Guntur Mirchi Kaaram",
+      founder_heading: "A Mission Rooted in Purity and Tradition",
+      founder_p1: "Guntur Mirchi Kaaram was born from a deeply personal conviction — that every Indian kitchen deserves access to pure, unadulterated spices, free from preservatives and artificial additives. Our founder grew up watching her family prepare mirchi karam and pickles the old-fashioned way: stone-ground, sun-dried, and made with love.",
+      founder_p2: "She noticed that most commercially available spice powders had lost the vibrant colour, the sharp aroma, and the authentic heat that only freshly prepared Guntur chilies can offer. That realisation sparked a mission — to bring the same time-honoured recipes from her grandmother's kitchen directly to yours.",
+      founder_p3: "Every product we make follows the traditional methods passed down through generations. We believe that when food is prepared the way our ancestors intended, it retains not just its flavour, but also its natural nutrients. No shortcuts, no chemicals — just pure, fiery goodness.",
+      founder_quote: "I started this journey so that families across India could taste what real Guntur spice is supposed to taste like — bold, honest, and made with heart.",
+      values_title: "What We Stand For",
+      values_subtitle: "The principles that guide everything we do.",
+      values: {
+        no_preservatives: {
+          title: "Zero Preservatives",
+          desc: "Every product is 100% natural. We never add preservatives, artificial colours, or chemical additives of any kind."
+        },
+        traditional: {
+          title: "Traditional Preparation",
+          desc: "Our recipes follow the ancestral methods of stone-grinding and sun-drying, preserving maximum nutrients and authentic flavour."
+        },
+        farmers: {
+          title: "Farmer First",
+          desc: "We source our chilies directly from local Guntur farmers, ensuring fair prices and the highest quality produce."
+        },
+        quality: {
+          title: "Uncompromising Quality",
+          desc: "From farm to packaging, every step is carefully monitored to deliver only the finest spices to your doorstep."
+        }
+      },
+      farmers_tag: "Empowering Communities",
+      farmers_title: "When You Buy, You Support a Farmer",
+      farmers_p1: "Every purchase you make directly supports the hardworking chili farmers of Guntur. We have eliminated middlemen from the supply chain, which means farmers receive fair compensation for their premium-quality chilies.",
+      farmers_p2: "By choosing Guntur Mirchi Kaaram, you are not just buying spices — you are investing in the livelihoods of farming families, helping preserve traditional agricultural practices, and ensuring that the legacy of Guntur's world-famous chilies continues for generations to come.",
+      shop_cta: "Shop & Support Farmers"
     }
   },
   te: {
@@ -191,6 +228,43 @@ export const translations = {
       mirchi_karam: { name: "గుంటూరు మిర్చి కారం" },
       pandumirapakaya: { name: "పండుమిరపకాయ పచ్చడి" },
       garlic_karam: { name: "వెల్లుల్లి కారం పొడి" }
+    },
+    about_page: {
+      hero_title: "మా కథ",
+      hero_subtitle: "ప్రతి చిటికెడు మసాలా వెనుక ఉన్న అభిరుచి.",
+      meet_founder_tag: "వ్యవస్థాపకురాలిని కలవండి",
+      founder_name: "వ్యవస్థాపకురాలు",
+      founder_role: "వ్యవస్థాపకురాలు, గుంటూరు మిర్చి కారం",
+      founder_heading: "స్వచ్ఛత మరియు సంప్రదాయంలో నాటుకున్న లక్ష్యం",
+      founder_p1: "గుంటూరు మిర్చి కారం ఒక లోతైన నమ్మకం నుండి పుట్టింది — ప్రతి భారతీయ వంటగదికి ప్రిజర్వేటివ్‌లు మరియు కృత్రిమ రసాయనాలు లేని స్వచ్ఛమైన మసాలాలు అందుబాటులో ఉండాలని. మా వ్యవస్థాపకురాలు తన కుటుంబం పాత పద్ధతిలో మిర్చి కారం మరియు పచ్చళ్లు తయారు చేయడం చూస్తూ పెరిగారు.",
+      founder_p2: "మార్కెట్లో దొరికే పొడులలో సహజమైన రంగు, ఘాటు, మరియు తాజాదనం లేవని ఆమె గమనించారు. ఆ గ్రహింపు ఒక లక్ష్యానికి నాంది పలికింది — అమ్మమ్మ వంటగది నుండి నేరుగా మీ ఇంటికి అదే సాంప్రదాయ వంటకాలను తీసుకురావడం.",
+      founder_p3: "మేము తయారు చేసే ప్రతి ఉత్పత్తి తరతరాలుగా వచ్చిన సాంప్రదాయ పద్ధతులను అనుసరిస్తుంది. మన పూర్వీకులు ఉద్దేశించిన విధంగా ఆహారాన్ని తయారు చేసినప్పుడు, అది రుచితో పాటు సహజ పోషకాలను కూడా నిలుపుకుంటుందని మేము నమ్ముతున్నాము.",
+      founder_quote: "నిజమైన గుంటూరు కారం రుచి ఎలా ఉంటుందో భారతదేశంలోని కుటుంబాలకు తెలియజేయాలనే ఆశయంతో ఈ ప్రయాణం ప్రారంభించాను.",
+      values_title: "మేము దేనికి నిలబడతాము",
+      values_subtitle: "మేము చేసే ప్రతి పనిని నడిపించే సూత్రాలు.",
+      values: {
+        no_preservatives: {
+          title: "ప్రిజర్వేటివ్‌లు లేవు",
+          desc: "ప్రతి ఉత్పత్తి 100% సహజమైనది. మేము ఎటువంటి ప్రిజర్వేటివ్‌లు, కృత్రిమ రంగులు లేదా రసాయనాలను కలపము."
+        },
+        traditional: {
+          title: "సాంప్రదాయ తయారీ",
+          desc: "మా వంటకాలు రాతి గ్రైండింగ్ మరియు ఎండబెట్టడం వంటి పూర్వీకుల పద్ధతులను అనుసరిస్తాయి."
+        },
+        farmers: {
+          title: "రైతు మొదట",
+          desc: "మేము మా మిర్చిని నేరుగా గుంటూరు రైతుల నుండి సేకరిస్తాము, న్యాయమైన ధరలు మరియు అత్యుత్తమ నాణ్యతను నిర్ధారిస్తాము."
+        },
+        quality: {
+          title: "రాజీలేని నాణ్యత",
+          desc: "పొలం నుండి ప్యాకేజింగ్ వరకు, ప్రతి దశను జాగ్రత్తగా పర్యవేక్షించి అత్యుత్తమ మసాలాలను అందిస్తాము."
+        }
+      },
+      farmers_tag: "సమాజాలను బలపరచడం",
+      farmers_title: "మీరు కొనుగోలు చేసినప్పుడు, మీరు రైతుకు సహాయం చేస్తారు",
+      farmers_p1: "మీరు చేసే ప్రతి కొనుగోలు నేరుగా గుంటూరు మిర్చి రైతులకు మద్దతు ఇస్తుంది. మేము మధ్యవర్తులను తొలగించాము, అంటే రైతులు వారి ప్రీమియం నాణ్యత మిర్చికి న్యాయమైన పరిహారం పొందుతారు.",
+      farmers_p2: "గుంటూరు మిర్చి కారాన్ని ఎంచుకోవడం ద్వారా, మీరు కేవలం మసాలాలు కొనడం మాత్రమే కాదు — మీరు రైతు కుటుంబాల జీవనోపాధిలో పెట్టుబడి పెడుతున్నారు మరియు సాంప్రదాయ వ్యవసాయ పద్ధతులను కాపాడుతున్నారు.",
+      shop_cta: "కొనుగోలు చేసి రైతులకు మద్దతు ఇవ్వండి"
     }
   }
 };

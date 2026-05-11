@@ -52,7 +52,7 @@ export default function CartPage() {
                 {items.map((item) => (
                   <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 p-4 md:p-6 items-center">
                     <div className="col-span-3 flex items-center gap-4">
-                      <div className="w-20 h-20 bg-gray-100 rounded flex items-center justify-center flex-shrink-0 text-xs text-gray-400">
+                      <div className="w-20 h-20 bg-gray-100 rounded flex items-center justify-center shrink-0 text-xs text-gray-400">
                         Image
                       </div>
                       <div>
@@ -80,7 +80,7 @@ export default function CartPage() {
                           onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
                           className="px-3 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold"
                         >-</button>
-                        <div className="px-3 py-1 font-bold text-sm min-w-[2rem] text-center">{item.quantity}</div>
+                        <div className="px-3 py-1 font-bold text-sm min-w-8 text-center">{item.quantity}</div>
                         <button 
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           className="px-3 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 font-bold"

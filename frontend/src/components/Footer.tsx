@@ -47,11 +47,11 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-4 text-brand-yellow">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin size={20} className="mr-2 mt-1 text-brand-orange flex-shrink-0" />
+                <MapPin size={20} className="mr-2 mt-1 text-brand-orange shrink-0" />
                 <span className="text-gray-300">Farm: Guntur, Andhra Pradesh, India</span>
               </li>
               <li className="flex items-center">
-                <MessageCircle size={20} className="mr-2 text-brand-orange flex-shrink-0" />
+                <MessageCircle size={20} className="mr-2 text-brand-orange shrink-0" />
                 <span className="text-gray-300">WhatsApp: +91 7093840055</span>
               </li>
             </ul>

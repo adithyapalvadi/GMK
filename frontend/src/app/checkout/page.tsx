@@ -164,11 +164,11 @@ export default function CheckoutPage() {
                   {t('checkout.payment')}
                 </h2>
                 <div className="space-y-4">
-                  <label className={`block flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${formData.paymentMethod === 'razorpay' ? 'border-brand-red bg-brand-yellow/10' : 'border-gray-200 hover:bg-gray-50'}`}>
+                  <label className={`flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${formData.paymentMethod === 'razorpay' ? 'border-brand-red bg-brand-yellow/10' : 'border-gray-200 hover:bg-gray-50'}`}>
                     <input type="radio" name="paymentMethod" value="razorpay" checked={formData.paymentMethod === 'razorpay'} onChange={handleInputChange} className="h-5 w-5 text-brand-red focus:ring-brand-red" />
                     <span className="ml-3 font-medium text-brand-dark">{t('checkout.online')}</span>
                   </label>
-                  <label className={`block flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${formData.paymentMethod === 'cod' ? 'border-brand-red bg-brand-yellow/10' : 'border-gray-200 hover:bg-gray-50'}`}>
+                  <label className={`flex items-center p-4 border rounded-lg cursor-pointer transition-colors ${formData.paymentMethod === 'cod' ? 'border-brand-red bg-brand-yellow/10' : 'border-gray-200 hover:bg-gray-50'}`}>
                     <input type="radio" name="paymentMethod" value="cod" checked={formData.paymentMethod === 'cod'} onChange={handleInputChange} className="h-5 w-5 text-brand-red focus:ring-brand-red" />
                     <span className="ml-3 font-medium text-brand-dark">{t('checkout.cod')}</span>
                   </label>

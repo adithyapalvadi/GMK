@@ -46,7 +46,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </Link>
       
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         <div className="flex justify-between items-start mb-2">
           <Link href={`/shop/${product.id}`} className="block">
             <h3 className="font-bold text-xl text-brand-dark group-hover:text-brand-red transition-colors line-clamp-2">
