@@ -44,6 +44,17 @@ export const translations = {
       subtitle: "Hand-picked bestsellers loved by thousands of spicy food enthusiasts across the country.",
       view_all: "View Entire Collection"
     },
+    collections_grid: {
+      title: "Our Collections",
+      nonveg: "NonVeg Pickles",
+      veg: "Veg Pickles",
+      karam: "Karam Podulu",
+      spices: "Spices",
+      combo: "Combo"
+    },
+    instagram: {
+      title: "Follow Us! on Insta"
+    },
     shop: {
       title: "Our Collection",
       search: "Search spices...",
@@ -174,9 +185,20 @@ export const translations = {
       years_desc: "వ్యవసాయ వారసత్వం"
     },
     collection: {
-      title: "సిగ్నేచర్ కలెక్షన్",
+      title: "మా అత్యుత్తమ ఉత్పత్తులు",
       subtitle: "దేశవ్యాప్తంగా వేలాది మంది కారం ప్రియులచే ఇష్టపడబడే అత్యుత్తమ ఉత్పత్తులు.",
-      view_all: "మొత్తం సేకరణను చూడండి"
+      view_all: "మొత్తం ఉత్పత్తులను చూడండి"
+    },
+    collections_grid: {
+      title: "మా సేకరణలు",
+      nonveg: "నాన్‌వెజ్ పచ్చళ్లు",
+      veg: "వెజ్ పచ్చళ్లు",
+      karam: "కారం పొడులు",
+      spices: "మసాలాలు",
+      combo: "కాంబో"
+    },
+    instagram: {
+      title: "ఇన్‌స్టాలో మమ్మల్ని ఫాలో అవ్వండి!"
     },
     shop: {
       title: "మా సేకరణ",
